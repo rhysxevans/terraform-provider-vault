@@ -38,11 +38,11 @@ func quotaLeaseCountResource() *schema.Resource {
 				Description: "Path of the mount or namespace to apply the quota. A blank path configures a global lease count quota.",
 			},
 			"max_leases": {
-				Type:         schema.TypeInt,
+				Type:         schema.TypeFloat,
 				Required:     true,
 				ForceNew:     false,
 				Description:  "The maximum number of leases to be allowed by the quota rule. The max_leases must be positive.",
-				ValidateFunc: validation.IntAtLeast(0),
+				ValidateFunc: validation.FloatAtLeast(0.0),
 			},
 		},
 	}
